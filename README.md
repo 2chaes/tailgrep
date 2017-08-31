@@ -1,7 +1,7 @@
 # tailgrep
-(high performance) tail + grep on window <br/>
-usage : tailgrep.exe --help <br/>
-[Download (on windows)](https://wiki.gnuxer.com/_media/playground/tailgrep.zip) <br/>
+* (high performance) tail + grep on window <br/>
+* usage : tailgrep.exe --help <br/>
+* [Download (on windows)](https://wiki.gnuxer.com/_media/playground/tailgrep.zip) <br/>
 
 ## [NAME]
 tailgrep - grep에 tail 기능을 추가한 프로그램 입니다.
