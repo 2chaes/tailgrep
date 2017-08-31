@@ -317,7 +317,7 @@ with open(argv[2], 'rb') as f:
 
     #print(len(res))
     if is_regexp == 1:
-        print(ptn)
+        #print(ptn)
         data = tuple(filter(lambda x: ptn.search(x), res))
     else:
         data = tuple(filter(lambda x: parse_str in x, res))
