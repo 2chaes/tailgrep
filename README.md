@@ -1,7 +1,7 @@
 # tailgrep
-(high performance) tail + grep on window
-usage : tailgrep.exe --help
-[Download (on windows)](https://wiki.gnuxer.com/_media/playground/tailgrep.zip)
+(high performance) tail + grep on window <br/>
+usage : tailgrep.exe --help <br/>
+[Download (on windows)](https://wiki.gnuxer.com/_media/playground/tailgrep.zip) <br/>
 
 ## [NAME]
 tailgrep - grep에 tail 기능을 추가한 프로그램 입니다.
@@ -12,10 +12,10 @@ tailgrep.exe [--count] [--time="time format"] [--tsync=number] [--ic] [--regexp]
 ```
 
 ## [DESCRIPTION]
-문자열 검색 속도가 다소 느린 낮은 버전의 파워쉘 파싱문법을 보완하기 위해 제작 되었습니다.
-기록되는 로그 파일의 tail - grep 속도 개선이 주 목적입니다.
-속도를 위해 Bytes 형태로 데이터를 처리합니다.
-출력 시에만 str 형태로 변환 합니다.
+문자열 검색 속도가 다소 느린 낮은 버전의 파워쉘 파싱문법을 보완하기 위해 제작 되었습니다.<br/>
+기록되는 로그 파일의 tail - grep 속도 개선이 주 목적입니다.<br/>
+속도를 위해 Bytes 형태로 데이터를 처리합니다.<br/>
+출력 시에만 str 형태로 변환 합니다.<br/>
 
 ## [OPTION]
 * "pattern", "file" 순서만 일치한다면, 옵션 위치는 무관합니다. long 옵션만 지원합니다.
