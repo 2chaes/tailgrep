@@ -33,8 +33,8 @@ help_str = '''
             일치하는 라인 수를 출력합니다.
 
         [--time="time format"]
-            "time format" 안에 아래의 기호와 문자열을 이용해서 "1분전" 시간을 포함하여 검색합니다.
-                ex) --time="%Y/%m-%d %H:%M:%S"  ->  "2017/08-26 23:50:58"
+            "time format" 안에 아래의 기호와 문자열을 이용해서 "현재 시간"을 time format의 형태로 포함하여 검색합니다.
+                ex) --time="%Y/%m-%d %H:%M:%S"  ->  "2017/08-25 23:50:58"
 
             %y : 연도를 축약하여 표시
             %Y : 연도를 축약하지 않고 표시
@@ -101,12 +101,13 @@ try: # time format
     time_idx = list(map(lambda x:x[:7], argv)).index("--time=")
     time_format = argv[time_idx][7:]
     is_time = 1
+    time_sync = 0
     argv.pop(time_idx)
     #print(time_format)
 
     tsync_idx = list(map(lambda x:x[:8], argv)).index("--tsync=")
     time_sync = sub(r"[\"\']", "", argv[tsync_idx][8:])
-    time_sync = -1 * int(time_sync) # 형변환 실패시 에러 발생, pop 불가
+    time_sync = int(time_sync) # 형변환 실패시 에러 발생, pop 불가
     is_tsync = 1
     argv.pop(tsync_idx)
     #print(time_sync)
@@ -172,7 +173,7 @@ if is_ic == 1:
 timedata = b''
 if is_time == 1: # 시간 옵션은 파이썬 strftime 문법을 따름
     is_regexp = 1
-    timedata = bytes(datetime.strftime(datetime.now() - timedelta(time_sync/24/60), time_format), 'utf-8') + b".*"
+    timedata = bytes(datetime.strftime(datetime.now() + timedelta(time_sync/24/60), time_format), 'utf-8') + b".*"
 
 if is_regexp == 1:
     ptn = compile(timedata + parse_str)
@@ -316,7 +317,7 @@ with open(argv[2], 'rb') as f:
 
     #print(len(res))
     if is_regexp == 1:
-        #print(ptn)
+        print(ptn)
         data = tuple(filter(lambda x: ptn.search(x), res))
     else:
         data = tuple(filter(lambda x: parse_str in x, res))

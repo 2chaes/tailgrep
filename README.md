@@ -27,7 +27,7 @@ tailgrep.exe [--count] [--time="time format"] [--tsync=number] [--ic] [--regexp]
 
 **[--time="time format"]**
 ```
-"time format" 안에 아래의 기호와 문자열을 이용해서 "1분전" 시간을 포함하여 검색합니다.
+"time format" 안에 아래의 기호와 문자열을 이용해서 "현재 시간"을 time format의 형태로 포함하여 검색합니다.
     ex) --time="%Y/%m-%d %H:%M:%S"  ->  "2017/08-26 23:50:58"
 
     %y : 연도를 축약하여 표시
