@@ -1,5 +1,5 @@
 # tailgrep
-* (high performance) tail + grep on window <br/>
+* tail + grep on window <br/>
 * usage : tailgrep.exe --help <br/>
 * [Download (on windows)](https://wiki.gnuxer.com/_media/playground/tailgrep.zip) <br/>
 
